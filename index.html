@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<style>
+  /* 1. NHÚNG FONT CHỮ TỪ GOOGLE */
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Dancing+Script:wght@700&family=Roboto:wght@400;500&display=swap');
+
+  /* 2. THIẾT LẬP GIAO DIỆN CHUNG & NỀN ĐỘNG */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    height: 100vh; /* Chiều cao toàn màn hình */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #FF9A9E, #FECFEF, #FF9966, #ff5e62);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite; /* Hiệu ứng chuyển màu nền */
+    overflow: hidden;
+  }
+
+  /* Animation cho nền */
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* 3. KHUNG THẺ NỘI DUNG (GLASSMORPHISM) */
+  .card {
+    background: rgba(255, 255, 255, 0.85); /* Màu trắng trong suốt */
+    backdrop-filter: blur(10px); /* Làm mờ nền sau lưng */
+    padding: 40px 30px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    border: 2px solid rgba(255,255,255,0.5);
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Hiệu ứng khung bay nhẹ */
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+
+  /* 4. CÁC THÀNH PHẦN CHỮ & HỌA TIẾT */
+  h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 28px;
+    margin: 0;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #FF5E62, #FF9966);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+
+  .emoji-header { font-size: 30px; }
+
+  .divider {
+    color: #FF9966;
+    font-size: 14px;
+    letter-spacing: 3px;
+    margin: 15px 0;
+    opacity: 0.8;
+  }
+
+  .info-box {
+    text-align: left;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    border-left: 5px solid #FF5E62;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+
+  .info-item {
+    margin-bottom: 8px;
+    font-size: 15px;
+    color: #444;
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .info-icon { margin-right: 10px; font-size: 18px; }
+
+  /* 5. PHẦN CHỮ KÝ */
+  .signature-section {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    position: relative;
+  }
+
+  .sign-note {
+    font-size: 12px;
+    color: #888;
+    font-style: italic;
+    margin-bottom: 5px;
+  }
+
+  .signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 32px;
+    color: #d35400;
+    font-weight: 700;
+    transform: rotate(-5deg); /* Nghiêng chữ ký một chút */
+    display: inline-block;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+  }
+
+  /* 6. NÚT LIÊN HỆ (CALL TO ACTION) */
+  .btn-call {
+    text-decoration: none;
+    display: inline-block;
+    padding: 12px 35px;
+    background: linear-gradient(90deg, #FF9966, #FF5E62);
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(255, 94, 98, 0.4);
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    animation: pulse 2s infinite;
+  }
+
+  .btn-call:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 94, 98, 0.6);
+  }
+
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 153, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 153, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 153, 102, 0); }
+  }
+
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="emoji-header">🎓</div>
+    <h1>Anh Ngữ Ms.Thảo</h1>
+    
+    <div class="divider">✦✦✦✦✦✦✦✦✦✦✦✦✦✦✦</div>
+
+    <div class="info-box">
+      <div class="info-item">
+        <span class="info-icon">🗺️</span>
+        <span>Kim Đới - Phường Bàn Thạch<br>Thành phố Đà Nẵng</span>
+      </div>
+      <div class="info-item">
+        <span class="info-icon">📞</span>
+        <span style="font-weight:bold; color:#FF5E62;">0383.098.210</span>
+      </div>
+    </div>
+
+    <div class="signature-section">
+      <div class="sign-note">(Ký và ghi rõ họ tên)</div>
+      <div class="signature">Anh Ngữ Ms.Thảo</div>
+    </div>
+
+    <a href="tel:0383098210" class="btn-call">Liên hệ ngay</a>
+  </div>
+
+</body>
+</html>
